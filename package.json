@@ -1,0 +1,36 @@
+{
+  "name": "smswire",
+  "version": "0.1.0",
+  "description": "Official Node.js SDK for SMSWire: send SMS and one-time codes through your own Android phones.",
+  "license": "MIT",
+  "homepage": "https://smswire.app/docs",
+  "repository": { "type": "git", "url": "git+https://github.com/yosefw1221/realy-sms.git", "directory": "sdks/node" },
+  "keywords": ["sms", "otp", "android", "gateway", "smswire"],
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": { "types": "./dist/index.d.ts", "default": "./dist/index.js" },
+      "require": { "types": "./dist/index.d.cts", "default": "./dist/index.cjs" }
+    }
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "generate": "UPDATE_TYPES=1 vitest run test/types.test.ts",
+    "prepublishOnly": "pnpm build"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "openapi-typescript": "^7.8.0",
+    "tsup": "^8.5.0",
+    "typescript": "~5.9.3",
+    "vitest": "^3.2.7"
+  }
+}
