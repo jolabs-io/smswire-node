@@ -4,6 +4,7 @@
   "description": "Official Node.js SDK for SMSWire: send SMS and one-time codes through your own Android phones.",
   "license": "MIT",
   "homepage": "https://smswire.app/docs",
+  "repository": { "type": "git", "url": "git+https://github.com/jolabs-io/smswire-node.git" },
   "keywords": ["sms", "otp", "android", "gateway", "smswire"],
   "type": "module",
   "engines": { "node": ">=20" },

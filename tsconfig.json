@@ -1,5 +1,21 @@
 {
-  "extends": "../../tsconfig.base.json",
-  "compilerOptions": { "lib": ["ES2023", "DOM"], "types": ["node"] },
+  // Standalone (not extending the monorepo's base), so the public mirror builds on its own.
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2023", "DOM"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "types": ["node"],
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true
+  },
   "include": ["src", "test", "tsup.config.ts"]
 }
